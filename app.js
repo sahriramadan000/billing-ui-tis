@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
   buildPaymentGrid();
   bindAll();
   initNav();
+  makeWaDraggable();
 });
 
 function adjustHeaderTop() {
@@ -1084,3 +1085,118 @@ function openTxDetail(txId) {
   $('tx-modal').hidden = false;
 }
 
+/* ── WA Float Drag Logic ───────────────────────────────── */
+function makeWaDraggable() {
+  const wa = $('wa-float');
+  const handle = $('wa-drag-handle');
+  if (!wa || !handle) return;
+  
+  let isDragging = false;
+  let startX, startY, initialX, initialY;
+  let hasDragged = false;
+
+  const onDown = (e) => {
+    if (e.type === 'mousedown' && e.button !== 0) return;
+    
+    // Stop propagation so we don't trigger the anchor immediately
+    e.preventDefault();
+    e.stopPropagation();
+    
+    isDragging = true;
+    hasDragged = false;
+    
+    if (e.type === 'touchstart') {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    } else {
+      startX = e.clientX;
+      startY = e.clientY;
+    }
+    
+    const rect = wa.getBoundingClientRect();
+    initialX = rect.left;
+    initialY = rect.top;
+    
+    wa.style.transition = 'none';
+    wa.style.animation = 'none';
+    wa.style.bottom = 'auto';
+    wa.style.right = 'auto';
+    wa.style.left = initialX + 'px';
+    wa.style.top = initialY + 'px';
+    
+    document.addEventListener('mousemove', onMove, { passive: false });
+    document.addEventListener('mouseup', onUp);
+    document.addEventListener('touchmove', onMove, { passive: false });
+    document.addEventListener('touchend', onUp);
+  };
+  
+  const onMove = (e) => {
+    if (!isDragging) return;
+    
+    let currentX, currentY;
+    if (e.type === 'touchmove') {
+      currentX = e.touches[0].clientX;
+      currentY = e.touches[0].clientY;
+    } else {
+      currentX = e.clientX;
+      currentY = e.clientY;
+    }
+    
+    const dx = currentX - startX;
+    const dy = currentY - startY;
+    
+    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) {
+      hasDragged = true;
+      e.preventDefault();
+    }
+    
+    let newX = initialX + dx;
+    let newY = initialY + dy;
+    
+    const maxX = window.innerWidth - wa.offsetWidth;
+    const maxY = window.innerHeight - wa.offsetHeight;
+    
+    newX = Math.max(0, Math.min(newX, maxX));
+    newY = Math.max(0, Math.min(newY, maxY));
+    
+    wa.style.left = newX + 'px';
+    wa.style.top = newY + 'px';
+  };
+  
+  const onUp = (e) => {
+    if (!isDragging) return;
+    isDragging = false;
+    wa.style.transition = '';
+    
+    document.removeEventListener('mousemove', onMove);
+    document.removeEventListener('mouseup', onUp);
+    document.removeEventListener('touchmove', onMove);
+    document.removeEventListener('touchend', onUp);
+    
+    // Reset hasDragged after a short delay so subsequent clicks can work
+    setTimeout(() => {
+      hasDragged = false;
+    }, 50);
+  };
+  
+  // Attach down to HANDLE
+  handle.addEventListener('mousedown', onDown);
+  handle.addEventListener('touchstart', onDown, { passive: false });
+  handle.addEventListener('click', (e) => {
+     e.preventDefault();
+     e.stopPropagation();
+  });
+  
+  // Prevent native dragging of the anchor itself
+  wa.addEventListener('dragstart', (e) => e.preventDefault());
+  
+  // Normal anchor click is handled by the browser naturally for the rest of the button.
+  // We only intercept if it bubbled from handle (which we stopped above anyway)
+  // but to be absolutely safe, let's keep click listener on WA too just for dragged state
+  wa.addEventListener('click', (e) => {
+    if (hasDragged) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  });
+}
