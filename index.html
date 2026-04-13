@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Online Billing Payment – Trans Indonesia Supercorridor</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+
+        <!-- ── APP DOWNLOAD BANNER ── -->
+        <div class="app-banner" id="app-banner">
+            <div class="app-banner-inner">
+                <button class="app-banner-close" id="app-banner-close" aria-label="Tutup">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </button>
+                <div class="app-banner-icon">
+                    <img src="logo/logo-app.png" class="app-banner-img-icon" alt="idPLAY App" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+                    <div class="app-icon-fallback" style="display:none;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    </div>
+                </div>
+                <div class="app-banner-text">
+                    <div class="app-banner-title">Idmall App</div>
+                    <div class="app-banner-sub">Kelola tagihan lebih mudah di app kami</div>
+                </div>
+                <div class="app-banner-btns">
+                    <a href="https://play.google.com/store/search?q=idmall&c=apps" target="_blank" rel="noopener" class="btn-store-banner playstore" aria-label="Download di Play Store">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.37.2.8.2 1.18-.02l12.44-7.18-2.83-2.84-10.79 10.04zM.5 1.5C.19 1.87 0 2.41 0 3.1v17.8c0 .69.19 1.23.5 1.6l.08.08 9.97-9.97v-.24L.58 1.42.5 1.5zM20.42 10.5l-2.56-1.48-3.17 3.17 3.17 3.17 2.58-1.49c.74-.43.74-1.94-.02-2.37zM4.36.26L16.8 7.44l-2.83 2.84L3.18.24C3.56.02 4 .04 4.36.26z"/></svg>
+                        <span class="btn-store-txt">Play Store</span>
+                    </a>
+                    <a href="https://apps.apple.com/id/app/idplay/id000000000" target="_blank" rel="noopener" class="btn-store-banner appstore" aria-label="Download di App Store">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.78M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                        <span class="btn-store-txt">App Store</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── HEADER ── -->
+        <header class="site-header">
+            <div class="header-inner">
+                <div class="logo-area">
+                    <div class="logo-placeholder" title="LOGO">
+                        <img src="logo/logo.png" alt="Nama Perusahaan" class="logo-img"/>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand-sub">Trans Indonesia</span>
+                        <span class="brand-name">SUPERCORRIDOR</span>
+                    </div>
+                </div>
+                <!-- <div class="header-right">
+                    <div class="hero-pill">Pembayaran Online Resmi</div>
+                </div> -->
+            </div>
+        </header>
+
+        <!-- ── PAGE NAV ── -->
+        <nav class="page-nav" id="page-nav">
+            <div class="page-nav-inner">
+                <button class="pn-tab active" id="pn-billing" data-panel="billing">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="10 9 9 9 8 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    Tagihan
+                </button>
+                <button class="pn-tab" id="pn-history" data-panel="history">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Riwayat
+                </button>
+            </div>
+        </nav>
+
+        <!-- ── MAIN ── -->
+        <main class="main-wrap">
+            <div class="card-container">
+
+                <!-- ════ SINGLE PANEL ════ -->
+                <div class="card step-panel active" id="panel-1">
+                    
+                    <!-- Card Header (Premium Banner) -->
+                    <div class="card-hero ch-theme-billing">
+                        <div class="card-hero-inner">
+                            <div class="ch-icon-box">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <div class="ch-text">
+                                <h1 class="ch-title">Bayar Tagihan</h1>
+                                <p class="ch-sub">Selesaikan proses pembayaran Anda kapan saja, hanya dengan beberapa tahapan modern dan aman.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Block 1: T&C ── -->
+                    <div class="billing-block">
+                        <div class="tnc-block">
+                            <button class="tnc-toggle" id="tnc-toggle" aria-expanded="false">
+                                <div class="tnc-toggle-left">
+                                    <div class="tnc-icon-wrap">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 12h6M9 16h4M7 4H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V6a2 2 0 00-2-2h-2M9 4h6a1 1 0 010 2H9a1 1 0 010-2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                    </div>
+                                    Syarat &amp; Ketentuan Pengguna
+                                </div>
+                                <svg class="chevron" width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                            <div class="tnc-body" id="tnc-body">
+                                <div class="tnc-content">
+                                    <h3>ONLINE BILLING PAYMENT – TRANS INDONESIA SUPERCORRIDOR</h3>
+                                    <p>Pengguna dimohon untuk membaca, mempelajari, dan memahami syarat dan ketentuan yang berlaku. Dengan melanjutkan, Pengguna dianggap telah menyetujui seluruh ketentuan yang berlaku di Website TRANS INDONESIA SUPERCORRIDOR dan bersedia mengikatkan diri pada perjanjian ini.</p>
+                                    <p>Apabila Pengguna tidak menyetujui syarat dan ketentuan, Pengguna dapat menghentikan penggunaan layanan ini.</p>
+                                    <div class="tnc-agree">
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" id="tnc-check"/>
+                                            <span class="checkmark"></span>
+                                            Saya telah membaca dan menyetujui Syarat &amp; Ketentuan
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ── Separator ── -->
+                    <div class="billing-sep"></div>
+
+                    <!-- ── Block 2: Search ── -->
+                    <div class="billing-block search-block">
+
+                        <!-- Section header -->
+                        <div class="search-hd">
+                            <div class="search-hd-icon">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/></svg>
+                            </div>
+                            <div class="search-hd-text">
+                                <div class="search-hd-title">Data Pelanggan</div>
+                                <div class="search-hd-sub">Temukan tagihan berdasarkan nomor akun langganan Anda</div>
+                            </div>
+                        </div>
+
+                        <!-- Input area -->
+                        <div class="search-area">
+                            <label class="field-label" for="account-input">
+                                Nomor Akun / No. Pelanggan
+                            </label>
+                            <div class="input-group" id="input-group">
+                                <div class="input-prefix-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/></svg>
+                                </div>
+                                <input type="text" id="account-input" class="field-input"
+                                    placeholder="Contoh: 16105195"
+                                    maxlength="20" inputmode="numeric" autocomplete="off"/>
+                                <button class="btn-search" id="btn-search">
+                                    <span class="btn-text">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2.2"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                        Cari
+                                    </span>
+                                    <span class="btn-spinner" hidden>
+                                        <svg class="spin" width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="rgba(255,255,255,.3)" stroke-width="2.5"/><path d="M12 2a10 10 0 0110 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="field-error" id="search-error" hidden></div>
+                        </div>
+
+                        <!-- Info tips row -->
+                        <div class="search-tips">
+                            <div class="search-tip">
+                                <div class="search-tip-icon tip-doc">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><line x1="8" y1="13" x2="16" y2="13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="8" y1="17" x2="12" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                </div>
+                                <div class="search-tip-body">
+                                    <div class="search-tip-label">Temukan</div>
+                                    <div class="search-tip-val">Proforma Invoice</div>
+                                </div>
+                            </div>
+                            <div class="search-tip-div"></div>
+                            <div class="search-tip">
+                                <div class="search-tip-icon tip-tag">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M8 8h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                </div>
+                                <div class="search-tip-body">
+                                    <div class="search-tip-label">Format nomor</div>
+                                    <div class="search-tip-val search-tip-mono">16<span>XXXXXX</span></div>
+                                </div>
+                            </div>
+                            <div class="search-tip-div"></div>
+                            <div class="search-tip">
+                                <div class="search-tip-icon tip-cs">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                                </div>
+                                <div class="search-tip-body">
+                                    <div class="search-tip-label">Bantuan</div>
+                                    <div class="search-tip-val">Hubungi CS</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ════ BILLING SECTION (revealed after search) ════ -->
+                    <div id="billing-section" hidden>
+
+                        <!-- ── Separator ── -->
+                        <div class="billing-sep"></div>
+
+                        <!-- ── Block 3: Customer Info ── -->
+                        <div class="billing-block">
+                            <div class="billing-block-title">
+                                <div class="billing-block-icon">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
+                                </div>
+                                Informasi Pelanggan
+                            </div>
+                            <div id="cust-card"></div>
+                        </div>
+
+                        <!-- ── Separator ── -->
+                        <div class="billing-sep"></div>
+
+                        <!-- ── Block 4: Invoice Table ── -->
+                        <div class="billing-block">
+                            <div class="billing-block-row">
+                                <div class="billing-block-title">
+                                    <div class="billing-block-icon">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                                    </div>
+                                    Daftar Tagihan
+                                </div>
+                                <label class="inv-count-badge" id="inv-count-badge">0</label>
+                            </div>
+                            <div id="invoice-list"></div>
+                        </div>
+
+                        <!-- ── Separator ── -->
+                        <div class="billing-sep"></div>
+
+                        <!-- ── Block 5: Total ── -->
+                        <div class="billing-block">
+                            <div class="total-block">
+                                <div class="total-block-top">
+                                    <span class="total-label">
+                                        Total Pembayaran
+                                    </span>
+                                    <span class="total-count" id="s-total-count">0 tagihan dipilih</span>
+                                </div>
+                                <div class="total-amount" id="s-total">Rp 0</div>
+                            </div>
+                        </div>
+
+                        <!-- ── Separator ── -->
+                        <div class="billing-sep"></div>
+
+                        <!-- ── Block 6: Payment Methods ── -->
+                        <div class="billing-block" id="payment-methods-block">
+                            <div class="billing-block-title">
+                                <div class="billing-block-icon">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><rect x="1" y="6" width="22" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M1 11h22" stroke="currentColor" stroke-width="2"/></svg>
+                                </div>
+                                Pilih Metode Pembayaran
+                            </div>
+
+                            <div class="info-banner warning">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><line x1="12" y1="9" x2="12" y2="13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                <span>Permintaan pembayaran sebelumnya yang <strong>pending</strong> akan otomatis <strong>dibatalkan</strong> setelah Anda memilih metode pembayaran baru.</span>
+                            </div>
+
+                            <div class="pm-section">
+                                <div class="pm-group">
+                                    <div class="pm-group-label">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M2 10h20" stroke="currentColor" stroke-width="1.8"/></svg>
+                                        Transfer Bank – Virtual Account
+                                    </div>
+                                    <div class="pm-grid" id="va-grid"></div>
+                                </div>
+                                <div class="pm-group">
+                                    <div class="pm-group-label">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8"/><path d="M14 14h7v7h-7z" stroke="currentColor" stroke-width="1.8"/></svg>
+                                        QRIS – Scan &amp; Bayar
+                                    </div>
+                                    <div class="pm-grid pm-grid-qris" id="qris-grid"></div>
+                                </div>
+                                <div class="pm-group">
+                                    <div class="pm-group-label">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><rect x="1" y="6" width="22" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 13a1 1 0 100-2 1 1 0 000 2z" fill="currentColor"/><path d="M22 10H18a2 2 0 000 4h4" stroke="currentColor" stroke-width="1.8"/></svg>
+                                        Dompet Digital
+                                    </div>
+                                    <div class="pm-grid pm-grid-wallet" id="wallet-grid"></div>
+                                </div>
+                                <div class="pm-group">
+                                    <div class="pm-group-label">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.8"/></svg>
+                                        Gerai Retail &amp; Kartu Kredit
+                                    </div>
+                                    <div class="pm-grid pm-grid-retail" id="retail-grid"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment Detail (after method selected) -->
+                        <div id="payment-detail-block" hidden></div>
+
+                        <!-- ── Action ── -->
+                        <div class="panel-actions">
+                            <button class="btn-primary full-w" id="btn-pay" disabled>
+                                Proses Pembayaran
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.8"/></svg>
+                            </button>
+                        </div>
+
+                    </div><!-- /billing-section -->
+                </div><!-- /panel-1 -->
+
+                <!-- ════ SUCCESS ════ -->
+                <div class="card step-panel" id="panel-success">
+                    <div class="success-wrap">
+                        <div class="success-rings">
+                            <div class="ring ring1"></div>
+                            <div class="ring ring2"></div>
+                        </div>
+                        <div class="success-icon-wrap">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                                <circle cx="30" cy="30" r="30" fill="url(#sg)"/>
+                                <path d="M17 31l9 9 17-19" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs><linearGradient id="sg" x1="0" y1="0" x2="60" y2="60"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <h2 class="success-title">Pembayaran Berhasil!</h2>
+                        <p class="success-sub" id="success-sub">Tagihan Anda telah dikonfirmasi.</p>
+                        <div class="success-receipt" id="success-receipt"></div>
+                        <div class="success-actions">
+                            <button class="btn-primary full-w" id="btn-reset">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 109-9 9 9 0 00-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M3 3v5h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Bayar Tagihan Lain
+                            </button>
+                            <button class="btn-secondary full-w" id="btn-to-history">
+                                Lihat Riwayat Transaksi
+                            </button>
+                            <div class="success-app-cta">
+                                <div class="success-app-cta-text">Pantau tagihan lebih mudah lewat aplikasi kami</div>
+                                <div class="success-store-row">
+                                    <a href="https://play.google.com/store/search?q=idmall&c=apps" target="_blank" class="btn-store-sm playstore">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.37.2.8.2 1.18-.02l12.44-7.18-2.83-2.84-10.79 10.04zM.5 1.5C.19 1.87 0 2.41 0 3.1v17.8c0 .69.19 1.23.5 1.6l.08.08 9.97-9.97v-.24L.58 1.42.5 1.5zM20.42 10.5l-2.56-1.48-3.17 3.17 3.17 3.17 2.58-1.49c.74-.43.74-1.94-.02-2.37zM4.36.26L16.8 7.44l-2.83 2.84L3.18.24C3.56.02 4 .04 4.36.26z"/></svg>
+                                        Google Play
+                                    </a>
+                                    <a href="https://apps.apple.com/id/app/idplay/id000000000" target="_blank" class="btn-store-sm appstore">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.18 1.27-2.16 3.8.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.37 2.78M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                                        App Store
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /panel-success -->
+
+                <!-- ════ HISTORY PANEL ════ -->
+                <div class="card step-panel" id="panel-history">
+                    
+                    <!-- Card Header (Premium Banner) -->
+                    <div class="card-hero ch-theme-history">
+                        <div class="card-hero-inner hist-hero-inner">
+                            <div class="ch-left-wrap">
+                                <div class="ch-icon-box">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><polyline points="12 6 12 12 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </div>
+                                <div class="ch-text">
+                                    <h1 class="ch-title">Riwayat Transaksi</h1>
+                                    <p class="ch-sub">Lihat kembali seluruh rekap pembayaran yang telah berhasil diproses.</p>
+                                </div>
+                            </div>
+                            <div class="ch-right-action">
+                                <select class="hist-filter-select-modern" id="hist-filter-year">
+                                    <option value="">Semua Tahun</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2024">2024</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- List rendered by JS -->
+                    <div id="hist-list" class="hist-list"></div>
+
+                    <!-- Footer -->
+                    <div class="hist-footer" id="hist-footer" hidden>
+                        <span class="hist-count" id="hist-count"></span>
+                        <div class="hist-pagination" id="hist-pagination" style="display: none;"></div>
+                    </div>
+                </div><!-- /panel-history -->
+
+            </div><!-- /card-container -->
+
+            <div class="footer-bar">
+                <span>© 2026 Trans Indonesia Supercorridor</span>
+            </div>
+        </main>
+
+        <!-- ── QR MODAL ── -->
+        <div class="modal-overlay" id="qr-modal" hidden>
+            <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="qr-title">
+                <button class="modal-close" id="qr-modal-close" aria-label="Tutup">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </button>
+                <div class="modal-header">
+                    <div class="modal-icon-wrap" id="qr-bank-icon"></div>
+                    <div>
+                        <div class="modal-title" id="qr-title">Pembayaran QRIS</div>
+                        <div class="modal-sub">Scan QR menggunakan aplikasi apapun</div>
+                    </div>
+                </div>
+                <div class="modal-amount-chip">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    Total: <strong id="qr-amount-display">Rp 0</strong>
+                </div>
+                <div class="qr-canvas-wrap">
+                    <canvas id="qr-canvas" width="220" height="220"></canvas>
+                    <div class="qr-center-logo">
+                        <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                            <rect width="34" height="34" rx="8" fill="url(#qgl)"/>
+                            <path d="M8 12h18M8 17h12M8 22h14" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+                            <defs><linearGradient id="qgl" x1="0" y1="0" x2="34" y2="34"><stop stop-color="#3b82f6"/><stop offset="1" stop-color="#6366f1"/></linearGradient></defs>
+                        </svg>
+                    </div>
+                </div>
+                <div class="qr-timer-row">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    Berlaku: <span class="qr-countdown" id="qr-countdown">15:00</span>
+                </div>
+                <div class="qr-steps">
+                    <div class="qr-step-item"><span class="qr-step-num">1</span><span>Buka aplikasi dompet digital Anda</span></div>
+                    <div class="qr-step-item"><span class="qr-step-num">2</span><span>Pilih menu <strong>Scan / Bayar QRIS</strong></span></div>
+                    <div class="qr-step-item"><span class="qr-step-num">3</span><span>Arahkan kamera ke QR di atas &amp; konfirmasi</span></div>
+                </div>
+                <div class="modal-footer-actions">
+                    <button class="btn-outline-download" id="btn-download-qr">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Download QR
+                    </button>
+                    <button class="btn-primary" id="qr-confirm-btn">Saya Sudah Bayar ✓</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── WALLET MODAL ── -->
+        <div class="modal-overlay" id="wallet-modal" hidden>
+            <div class="modal-box" role="dialog" aria-modal="true">
+                <button class="modal-close" id="wallet-modal-close" aria-label="Tutup">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </button>
+                <div class="modal-header">
+                    <div class="modal-icon-wrap" id="wallet-icon-wrap"></div>
+                    <div>
+                        <div class="modal-title" id="wallet-modal-title">Bayar via Dompet Digital</div>
+                        <div class="modal-sub" id="wallet-modal-sub">Anda akan diarahkan ke aplikasi</div>
+                    </div>
+                </div>
+                <div class="modal-amount-chip">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    Total: <strong id="wallet-amount-display">Rp 0</strong>
+                </div>
+                <div class="wallet-redirect-flow">
+                    <div class="wrf-icon" id="wrf-icon"></div>
+                    <div class="wrf-arrow"><div class="wrf-dot"></div><div class="wrf-dot"></div><div class="wrf-dot"></div></div>
+                    <div class="wrf-phone">
+                        <svg width="44" height="44" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 18h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                </div>
+                <p class="wallet-cta-text" id="wallet-cta-text">Ketuk tombol di bawah untuk membuka aplikasi</p>
+                <div class="modal-footer-actions">
+                    <a class="btn-primary wallet-app-btn" id="wallet-open-btn" href="#" target="_blank">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="15 3 21 3 21 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="10" y1="14" x2="21" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Buka Aplikasi
+                    </a>
+                    <button class="btn-secondary" id="wallet-confirm-btn">Saya Sudah Bayar ✓</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ── TRANSACTION DETAIL MODAL ── -->
+        <div class="modal-overlay" id="tx-modal" hidden>
+            <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="tx-title">
+                <button class="modal-close" id="tx-modal-close" aria-label="Tutup">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                </button>
+                <div class="modal-header">
+                    <div class="modal-icon-wrap" style="background:var(--grad-soft); color:var(--g-green); border:1px solid rgba(30,201,140,.2)">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M9 13h6M9 17h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <div>
+                        <div class="modal-title" id="tx-title">Detail Transaksi</div>
+                        <div class="modal-sub" id="tx-date">Tanggal Transaksi</div>
+                    </div>
+                </div>
+                
+                <div class="tx-receipt-card">
+                    <div class="tx-row">
+                        <span class="tx-label">ID Transaksi</span>
+                        <strong class="tx-val" id="tx-val-id"></strong>
+                    </div>
+                    <div class="tx-row">
+                        <span class="tx-label">Pelanggan</span>
+                        <div class="tx-val tx-right-align">
+                            <strong id="tx-val-name"></strong><br>
+                            <span style="font-size:11.5px;color:var(--tx-m);" id="tx-val-acct"></span>
+                        </div>
+                    </div>
+                    <div class="tx-row">
+                        <span class="tx-label">Periode Tagihan</span>
+                        <strong class="tx-val" id="tx-val-period"></strong>
+                    </div>
+                    <div class="tx-row">
+                        <span class="tx-label">Metode Pembayaran</span>
+                        <strong class="tx-val" id="tx-val-method"></strong>
+                    </div>
+                    
+                    <div class="billing-sep" style="margin:16px 0;"></div>
+                    
+                    <div class="tx-row tx-total-row">
+                        <span class="tx-label" style="font-size:14px; color:var(--tx-h);">Total Dibayar</span>
+                        <strong class="tx-total-val" id="tx-val-amount"></strong>
+                    </div>
+                </div>
+                
+                <div class="modal-footer-actions" style="margin-top:20px;">
+                    <button class="btn-outline-download full-w" style="justify-content:center" id="btn-download-receipt" disabled>
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Unduh Bukti (Segera Hadir)
+                    </button>
+                    <button class="btn-primary full-w" id="tx-modal-close-btn">Tutup Detail</button>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/628111000222?text=Halo%20Customer%20Service%20TIS,%20saya%20butuh%20bantuan%20terkait%20tagihan." 
+           class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Hubungi WhatsApp CS">
+            <div class="wa-float-img-wrap">
+                <div class="wa-float-avatar">
+                    <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Jocelyn&backgroundColor=e2e8f0" alt="CS Avatar" />
+                </div>
+                <div class="wa-float-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                </div>
+            </div>
+            <div class="wa-float-text">
+                <div class="wa-float-title">Bantuan via WA</div>
+                <div class="wa-float-sub">Tanya CS sekarang</div>
+            </div>
+        </a>
+
+        <script src="app.js"></script>
+    </body>
+</html>
